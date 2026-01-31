@@ -1,5 +1,8 @@
 [build]
 builder = "NIXPACKS"
 
-[deploy]
+[services.web]
 startCommand = "streamlit run app.py --server.address 0.0.0.0 --server.port $PORT"
+
+[services.ingest]
+startCommand = "python ingest/ingest_openalex.py"
